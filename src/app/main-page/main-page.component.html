@@ -1,0 +1,25 @@
+<div class="container">
+  <a routerLink="/" class="mr-4 pb-4">Home Page</a>
+  <a routerLink="/edit" class="mr-4 pb-4">Edit Items</a>
+  <a style="cursor:pointer" (click)="LogOut()" routerLink="/signin">Logout</a>
+</div>
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>IMAGE</th>
+        <th>NAME</th>
+        <th>CATEGORIES</th>
+        <th>PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of products">
+        <td><img src="{{prod.Image}}" width="64px" height="64px"></td>
+        <td>{{prod.Name}}</td>
+        <td>{{prod.Categories}}</td>
+        <td>${{prod.Price}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
